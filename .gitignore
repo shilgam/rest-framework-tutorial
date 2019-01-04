@@ -1,7 +1,0 @@
-*.pyc
-*.db
-*~
-.*
-
-!.gitignore
-!.travis.yml
