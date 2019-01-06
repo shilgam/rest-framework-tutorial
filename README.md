@@ -12,4 +12,9 @@
 
 1. Go to http://127.0.0.1:8000/snippets in browser. Or run in terminal:
 
-        $ http http://127.0.0.1:8000/snippets/
+        $ http http://127.0.0.1:8000/snippets.json  # JSON suffix
+        $ http http://127.0.0.1:8000/snippets.api   # Browsable API suffix
+
+1. Run the test suite
+
+        $ python manage.py test
