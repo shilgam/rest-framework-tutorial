@@ -5,6 +5,7 @@ djangorestframework==3.9.0
 gunicorn==19.9.0
 httpie==1.0.2
 idna==2.8
+psycopg2==2.7.6.1
 Pygments==2.3.1
 pytz==2018.7
 requests==2.21.0
