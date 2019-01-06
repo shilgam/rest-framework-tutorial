@@ -1,5 +1,6 @@
 certifi==2018.11.29
 chardet==3.0.4
+dj-database-url==0.5.0
 Django==2.1.5
 djangorestframework==3.9.0
 gunicorn==19.9.0
