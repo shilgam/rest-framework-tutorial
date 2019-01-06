@@ -2,13 +2,17 @@
 
 1. Clone the repo
 
-1. Run the app in a local server:
+1. Build the app:
 
-        $ python manage.py runserver
+        $ docker-compose up --build
 
 1. Migrate the database schema
 
-        $ python manage.py migrate
+        $ docker-compose exec web python manage.py migrate
+
+1. Run the app in a local server:
+
+        $ python manage.py runserver
 
 1. Go to http://127.0.0.1:8000/snippets in browser. Or run in terminal:
 
@@ -17,4 +21,4 @@
 
 1. Run the test suite
 
-        $ python manage.py test
+        $ docker-compose exec web python manage.py test
