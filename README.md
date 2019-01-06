@@ -13,3 +13,7 @@
 1. Go to http://127.0.0.1:8000/snippets in browser. Or run in terminal:
 
         $ http http://127.0.0.1:8000/snippets/
+
+1. Run the test suite
+
+        $ python manage.py test
