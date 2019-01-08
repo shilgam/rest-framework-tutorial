@@ -1,0 +1,3 @@
+- name: test
+  service: web_codeship_example_python
+  command: bin/ci "python manage.py test" # you only need to change the command here
