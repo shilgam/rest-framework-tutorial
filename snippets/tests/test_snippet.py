@@ -16,13 +16,13 @@ def create_snippet(attributes=data):
 class ListTests(APITestCase):
     def test_view(self):
         create_snippet(data)
-        url = reverse('snippets:index')
+        url = reverse('snippets:snippet_index')
         response = self.client.get(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), 1)
 
     def test_create(self):
-        url = reverse('snippets:index')
+        url = reverse('snippets:snippet_index')
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertIs(Snippet.objects.count(), 1)
@@ -31,14 +31,14 @@ class ListTests(APITestCase):
 class DetailTests(APITestCase):
     def test_view(self):
         snippet = create_snippet(data)
-        url = reverse('snippets:detail', args=(snippet.id,))
+        url = reverse('snippets:snippet_detail', args=(snippet.id,))
         response = self.client.get(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['code'], data['code'])
 
     def test_view_unexistent(self):
         create_snippet(data)
-        url = reverse('snippets:detail', args=(99999999,))
+        url = reverse('snippets:snippet_detail', args=(99999999,))
         response = self.client.get(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         content = {
@@ -48,7 +48,7 @@ class DetailTests(APITestCase):
 
     def test_update(self):
         snippet = create_snippet(data)
-        url = reverse('snippets:detail', args=(snippet.id,))
+        url = reverse('snippets:snippet_detail', args=(snippet.id,))
         updated_data = {'code': 'print("Updated code")'}
         response = self.client.put(url, updated_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -56,6 +56,6 @@ class DetailTests(APITestCase):
 
     def test_delete(self):
         snippet = create_snippet(data)
-        url = reverse('snippets:detail', args=(snippet.id,))
+        url = reverse('snippets:snippet_detail', args=(snippet.id,))
         response = self.client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
