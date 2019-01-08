@@ -5,8 +5,15 @@ web:
   environment:
     DATABASE_URL: "postgres://postgresuser@postgres/snippet"
   cached: true
+
 postgres:
   image: postgres:9.6.2-alpine
   environment:
     POSTGRES_USER: postgresuser
     POSTGRES_DB: snippet
+
+codeship_heroku_deployment:
+ image: codeship/heroku-deployment
+ encrypted_env_file: deployment.env.encrypted
+ volumes:
+ - ./:/deploy
