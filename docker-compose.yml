@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: gunicorn -b 0.0.0.0:8000 tutorial.wsgi:application
+    depends_on:
+      - postgres
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgres://postgresuser@postgres/snippets
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: postgresuser
+      POSTGRES_DB: snippets
