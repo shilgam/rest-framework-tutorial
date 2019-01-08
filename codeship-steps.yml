@@ -1,0 +1,3 @@
+- name: test
+  service: web
+  command: bin/ci "python manage.py test" # you only need to change the command here
