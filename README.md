@@ -20,8 +20,9 @@
 
 1. Go to http://127.0.0.1:8000/snippets in browser. Or run in terminal:
 
-        $ http http://127.0.0.1:8000/snippets.json  # JSON suffix
-        $ http http://127.0.0.1:8000/snippets.api   # Browsable API suffix
+        $ docker-compose exec web http GET http://127.0.0.1:8000/snippets/2.json  # JSON format
+        $ docker-compose exec web http GET http://127.0.0.1:8000/snippets/2.api  # API format
+        $ docker-compose exec web http POST http://127.0.0.1:8000/snippets.json code="print('hello!')"  # create new snippet
 
 1. Run the test suite
 
