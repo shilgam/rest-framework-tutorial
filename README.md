@@ -1,3 +1,7 @@
+# rest-framework-tutorial
+
+[![Codeship Status for shilgam/rest-framework-tutorial](https://app.codeship.com/projects/a995cb20-f548-0136-e8d2-7e4b83070a34/status?branch=master)](/projects/320832)
+
 ## Usage
 
 1. Clone the repo
