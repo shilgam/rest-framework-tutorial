@@ -11,3 +11,4 @@ db.sqlite3
 # Project specific
 deployment.env
 codeship.aes
+db-data
