@@ -16,3 +16,5 @@ services:
     environment:
       POSTGRES_USER: postgresuser
       POSTGRES_DB: snippet
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
