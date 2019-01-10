@@ -2,6 +2,9 @@
 
 [![Codeship Status for shilgam/rest-framework-tutorial](https://app.codeship.com/projects/a995cb20-f548-0136-e8d2-7e4b83070a34/status?branch=master)](/projects/320832)
 
+This repository contains a simple pastebin code highlighting Web API that's created based on the [official Django REST framework tutorial](https://www.django-rest-framework.org/tutorial/1-serialization/).
+
+
 ## Usage
 
 1. Clone the repo
